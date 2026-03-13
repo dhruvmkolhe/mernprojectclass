@@ -1,0 +1,99 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Source+Sans+3:wght@300;400;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 4%;
+    --foreground: 0 0% 95%;
+
+    --card: 0 0% 8%;
+    --card-foreground: 0 0% 95%;
+
+    --popover: 0 0% 8%;
+    --popover-foreground: 0 0% 95%;
+
+    --primary: 0 72% 51%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 0 0% 14%;
+    --secondary-foreground: 0 0% 90%;
+
+    --muted: 0 0% 12%;
+    --muted-foreground: 0 0% 55%;
+
+    --accent: 0 0% 16%;
+    --accent-foreground: 0 0% 95%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 0 0% 16%;
+    --input: 0 0% 16%;
+    --ring: 0 72% 51%;
+
+    --radius: 0.5rem;
+
+    --cinema-glow: 0 72% 51%;
+    --cinema-dark: 0 0% 2%;
+    --cinema-surface: 0 0% 10%;
+
+    --font-display: 'Bebas Neue', sans-serif;
+    --font-body: 'Source Sans 3', sans-serif;
+
+    --sidebar-background: 0 0% 6%;
+    --sidebar-foreground: 0 0% 90%;
+    --sidebar-primary: 0 72% 51%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 0 0% 14%;
+    --sidebar-accent-foreground: 0 0% 90%;
+    --sidebar-border: 0 0% 14%;
+    --sidebar-ring: 0 72% 51%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: var(--font-body);
+  }
+
+  h1, h2, h3 {
+    font-family: var(--font-display);
+    letter-spacing: 0.04em;
+  }
+}
+
+@layer utilities {
+  .cinema-gradient {
+    background: linear-gradient(180deg, transparent 0%, hsl(var(--cinema-dark)) 100%);
+  }
+
+  .cinema-glow {
+    box-shadow: 0 0 30px -5px hsl(var(--cinema-glow) / 0.3);
+  }
+
+  .cinema-card-hover {
+    @apply transition-all duration-300 ease-out;
+  }
+
+  .cinema-card-hover:hover {
+    transform: scale(1.08);
+    z-index: 10;
+    box-shadow: 0 16px 40px -8px hsl(0 0% 0% / 0.8);
+  }
+
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+}
